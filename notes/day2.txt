@@ -1,0 +1,21 @@
+be careful not to "bottleneck" your network by reducing to a density smaller
+than the actual output
+
+word embeddings
+==
+dada uma palavra, transformar em um vetor de dimensao fixa
+
+exemplo: Word2Vec (ideia de que palavras de semantica similar ocorrem mais
+proxima em um texto)
+
+N = 100
+"king" -> [1.1, 0.4, ...]
+
+
+typical image classifier:
+x -> convolution -> pool (max/avg) -> conv -> pool -> ... -> flatten -> fully connected layer -> output
+   |--------feature extraction---------------------------------------------------|
+
+the feature extraction part can be reused and just train the flatten part of
+it
+

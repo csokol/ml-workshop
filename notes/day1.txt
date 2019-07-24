@@ -1,0 +1,66 @@
+AI ~ 1950
+Machine Learning ~ 1970
+Artificial neural networks ~ 1970
+
+
+
+Keras -> tensor flow boilerplate library
+
+mnist -> dataset of tagged digit images  http://yann.lecun.com/exdb/mnist/
+
+
+When training a neural network always have a test dataset that's not used in
+training -> so the network can be "generalized" 
+
+
+Deep neural network is just a weighted directed acyclic graph (W DAG)
+
+a cada level da rede, ocorre uma multiplicacao de vetores
+h = funcao(W * input + bias)
+
+funcao eh chamada de activation function, exemplo, relu, softmax
+
+model.add(layers.Dense(512, activation="relu")) -> 512 is a hyper parameter
+model.add(layers.Dense(10, activation="softmax"))
+
+relu(x) = max(0, x) -> boa input activation function
+softmax() -> "normaliza" um vetor, a soma dos valores eh 1 (bom para
+pesos/probabilidade)
+sigmoid(x) ->  coloca x entre um e zero (""""normaliza"""")
+
+model.compile(
+    optimizer="rmsprop"
+    loss="categorical_crossentropy",
+    metrics=["accuracy"]    
+)
+
+optimizer eh o algoritmo usado para encontrar os pesos
+loss eh a funcao usada para contabilizar a qualidade dos (erros) resultados
+
+input eh o vetor de entrada, W sao os pesos e bias outro vetor. (W e input sao
+matrizes, portanto as dimensoes da saida mudam) -> por isso funciona tao bem
+GPUs!
+
+
+
+Natural language processing
+
+given a set of movie reviews, predict if its a positive or bad review
+
+first challange: turn a list of words into an array that becomes input to a
+neural network.
+
+first attempt: bag of words
+given a vocabulary, each review is encoded as an array with 1's and 0's.
+example:
+vocabulary: hello, world, thoguhtworks, i
+hello world: [1, 1, 0, 0]
+
+hello thoughtworks: [1, 0, 1, 0]
+
+
+
+
+
+
+
